@@ -1,0 +1,17 @@
+---
+layout: default
+title: "Archivo del Año {{ page.year }}"
+---
+
+<h1>Artículos del Año {{ page.year }}</h1>
+
+<ul>
+  {% for post in site.posts %}
+    {% if post.date | date: "%Y" == page.year %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <p>{{ post.excerpt }}</p>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>

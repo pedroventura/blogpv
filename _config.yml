@@ -1,0 +1,31 @@
+title: "Blog de Tecnología Pedro Ventura desde 2008"
+description: "Un blog sobre informática, tecnología, programación y otras curiosidades de Internet"
+baseurl: "" # Dejar vacío si el repositorio es username.github.io, sino incluir el subdirectorio, por ejemplo: /mi-blog
+url: "https://pedroventura.github.io" # URL de tu sitio en GitHub Pages
+
+# Tema predeterminado de Jekyll
+theme: minima
+
+# Plugins que estás utilizando
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-archives
+
+# Configuración de jekyll-archives para crear archivos de año y categoría
+jekyll-archives:
+  enabled:
+    - year
+    - category
+  layouts:
+    year: archive
+    category: archive
+  permalinks:
+    year: /year/:year/
+    category: /category/:name/
+
+# Configuración de la paginación
+paginate: 5 # Número de posts por página
+paginate_path: "/page:num" # Ruta de la paginación

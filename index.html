@@ -1,0 +1,30 @@
+---
+layout: base
+title: "Inicio"
+---
+
+# Bienvenido al Blog de Tecnología
+
+Explora artículos sobre informática, programación y tecnología. Disfruta de nuestros tutoriales, noticias y recursos.
+
+<h2>Años</h2>
+<ul>
+  {% for post in site.posts %}
+    {% assign year = post.date | date: "%Y" %}
+    {% unless year == current_year %}
+      {% assign current_year = year %}
+      <li><a href="{{ site.baseurl }}/year/{{ current_year }}">{{ current_year }}</a></li>
+    {% endunless %}
+  {% endfor %}
+</ul>
+
+
+<h2>Categorías</h2>
+<ul>
+  {% for category in site.categories %}
+    <li><a href="{{ site.baseurl }}/category/{{ category[0] }}">{{ category[0] }}</a> ({{ category[1].size }} posts)</li>
+  {% endfor %}
+</ul>
+
+
+
