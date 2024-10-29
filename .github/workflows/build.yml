@@ -3,7 +3,7 @@ name: Build and Deploy Jekyll Site
 on:
   push:
     branches:
-      - main  # Ajusta a tu rama principal
+      - main
 
 jobs:
   build:
@@ -16,11 +16,13 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '2.7'  # Cambia si necesitas otra versión compatible
+          ruby-version: '2.7'  # GitHub Pages usa Ruby 2.7
+
+      - name: Install Bundler
+        run: gem install bundler -v 2.4.22  # Especifica la versión compatible de Bundler
 
       - name: Install dependencies
         run: |
-          gem install bundler
           bundle config set path 'vendor/bundle'
           bundle install
 
